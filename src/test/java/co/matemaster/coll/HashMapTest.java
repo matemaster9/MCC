@@ -2,8 +2,10 @@ package co.matemaster.coll;
 
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author matemaster
@@ -31,5 +33,13 @@ public class HashMapTest {
                 .mapToObj(charNumber -> (char) charNumber)
                 .collect(Collectors.groupingBy(t -> t, Collectors.counting()));
         System.out.println(wordCountMap);
+    }
+    
+    @Test
+    public void test2() {
+        List<Integer> list = IntStream.range(0, 100)
+                .boxed()
+                .toList();
+        System.out.println(list);
     }
 }
